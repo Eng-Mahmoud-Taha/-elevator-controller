@@ -1,0 +1,517 @@
+# Compile of EVcontroller.vhd failed with 9 errors.
+# Compile of unitControl.vhd failed with 7 errors.
+# Compile of requestResolver.vhd was successful.
+# Compile of waitTimer.vhd was successful.
+# Compile of unitControl.vhd failed with 7 errors.
+# Compile of unitControl.vhd was successful.
+# Compile of EVcontroller.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+clear
+# invalid command name "clear"
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 10:16:54 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl_tb(sim)
+# Loading work.elevator_ctrl(rtl)
+# Loading work.request_resolver(rtl)
+# Loading work.wait_timer(rtl)
+# Loading work.unit_control(rtl)
+add wave -radix unsigned /elevator_ctrl_tb/floor
+add wave /elevator_ctrl_tb/mv_up /elevator_ctrl_tb/mv_dn /elevator_ctrl_tb/door_open
+add wave /elevator_ctrl_tb/enter_n /elevator_ctrl_tb/sw
+run -all
+# ** Note: T1: one request, floor 0 -> 2
+#    Time: 50 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: T2: request at the current floor (2)
+#    Time: 715 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Failure: T2: timeout, the door never opened
+#    Time: 5760 ns  Iteration: 0  Process: /elevator_ctrl_tb/stim File: C:/Mahmoud Taha/Computer ARCH/Project/elevator_ctrl_tb.vhd
+# Break in Subprogram wait_door at C:/Mahmoud Taha/Computer ARCH/Project/elevator_ctrl_tb.vhd line 134
+quit -sim
+# End time: 10:23:14 on Oct 28,2026, Elapsed time: 0:06:20
+# Errors: 1, Warnings: 13
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 10:23:21 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl_tb(sim)
+# Loading work.elevator_ctrl(rtl)
+# Loading work.request_resolver(rtl)
+# Loading work.wait_timer(rtl)
+# Loading work.unit_control(rtl)
+quit -sim
+# End time: 10:23:40 on Oct 28,2026, Elapsed time: 0:00:19
+# Errors: 0, Warnings: 1
+vsim work.elevator_ctrl
+# vsim work.elevator_ctrl 
+# Start time: 10:24:04 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl(rtl)
+# Loading work.request_resolver(rtl)
+# Loading work.wait_timer(rtl)
+# Loading work.unit_control(rtl)
+quit -sim
+# End time: 10:24:19 on Oct 28,2026, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 1
+# Compile of elevator_ctrl_tb.vhd was successful.
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 10:25:07 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl_tb(sim)
+# Loading work.elevator_ctrl(rtl)
+# Loading work.request_resolver(rtl)
+# Loading work.wait_timer(rtl)
+# Loading work.unit_control(rtl)
+add wave -radix unsigned /elevator_ctrl_tb/floor
+add wave /elevator_ctrl_tb/mv_up /elevator_ctrl_tb/mv_dn /elevator_ctrl_tb/door_open
+add wave /elevator_ctrl_tb/enter_n /elevator_ctrl_tb/sw
+run -all
+# ** Note: T1: one request, floor 0 -> 2
+#    Time: 50 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: T2: request at the current floor (2)
+#    Time: 715 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T3: request below, floor 2 -> 0
+#    Time: 945 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T4: several requests going up (5, 3, 1): stops at 1, 3, 5
+#    Time: 1615 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T5: direction rule: at 5 going up, request 7 then 2: 7 first, then 2
+#    Time: 3385 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T6: invalid floors (12 and 15) are ignored
+#    Time: 5375 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T7: reset in the middle of a move
+#    Time: 6460 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: ALL TESTS DONE. If no error message appeared above, the design PASSED.
+#    Time: 7580 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+quit -sim
+# End time: 10:29:35 on Oct 28,2026, Elapsed time: 0:04:28
+# Errors: 0, Warnings: 2
+# Compile of elevator_ctrl_tb.vhd was successful.
+vsim -gCLK_FREQ=10 work.elevator_ctrl
+# vsim work.elevator_ctrl -gCLK_FREQ=10 
+# Start time: 10:31:23 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl(rtl)
+# Loading work.request_resolver(rtl)
+# Loading work.wait_timer(rtl)
+# Loading work.unit_control(rtl)
+add wave *
+force clk 0 0, 1 10 ns -r 20 ns
+force reset_n 0 0, 1 50 ns
+force enter_n 1
+force sw 0011
+run 100 ns
+force enter_n 0
+run 60 ns
+force enter_n 1
+run 2 us
+quit -sim
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vish-191) Questa has encountered an unexpected internal error: ../../src/tkgui/tkMain.c(2630). 
+# Please contact Questa support at http://supportnet.mentor.com
+# End time: 10:33:52 on Oct 28,2026, Elapsed time: 0:02:29
+# Errors: 151, Warnings: 2
+# Compile of elevator_ctrl_tb.vhd was successful.
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 10:34:53 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl_tb(sim)
+# Loading work.elevator_ctrl(rtl)
+# Loading work.request_resolver(rtl)
+# Loading work.wait_timer(rtl)
+# Loading work.unit_control(rtl)
+add wave -radix unsigned /elevator_ctrl_tb/floor
+add wave /elevator_ctrl_tb/mv_up /elevator_ctrl_tb/mv_dn /elevator_ctrl_tb/door_open
+add wave /elevator_ctrl_tb/enter_n /elevator_ctrl_tb/sw
+run -all
+# ** Note: T1: one request, floor 0 -> 2
+#    Time: 50 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: T2: request at the current floor (2)
+#    Time: 715 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T3: request below, floor 2 -> 0
+#    Time: 945 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T4: several requests going up (5, 3, 1): stops at 1, 3, 5
+#    Time: 1615 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T5: direction rule: at 5 going up, request 7 then 2: 7 first, then 2
+#    Time: 3385 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T5b: direction rule: 1 pressed BEFORE 7, but going up: 7 is served first
+#    Time: 5375 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T6: invalid floors (12 and 15) are ignored
+#    Time: 8465 ns  Iteration: 3  Instance: /elevator_ctrl_tb
+# ** Note: T7: reset in the middle of a move
+#    Time: 9550 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: ALL TESTS DONE. If no error message appeared above, the design PASSED.
+#    Time: 10670 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+quit -sim
+# End time: 00:51:12 on Oct 30,2026, Elapsed time: 39:16:19
+# Errors: 0, Warnings: 2
+# Compile of waitTimer.vhd was successful.
+# Compile of requestResolver.vhd was successful.
+# Compile of EVcontroller.vhd was successful.
+# Error opening C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd
+# Path name 'C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd' doesn't exist.
+# Error opening C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd
+# Path name 'C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd' doesn't exist.
+# Error opening C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd
+# Path name 'C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd' doesn't exist.
+# Error opening C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd
+# Path name 'C:\Mahmoud Taha\Computer ARCH\Project\tick_gen.vhd' doesn't exist.
+# Compile of unitControl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+   vsim -voptargs=+acc work.elevator_ctrl_tb
+# vsim -voptargs="+acc" work.elevator_ctrl_tb 
+# Start time: 00:59:54 on Oct 30,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.elevator_ctrl_tb(sim)
+# ** Error: (vsim-13) Recompile work.elevator_ctrl(rtl) because work.unit_control has changed.
+# Load interrupted
+# Error loading design
+# End time: 00:59:55 on Oct 30,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 9
+do {C:/Mahmoud Taha/Computer ARCH/Project/run_sim.do}
+# request_resolver.vhd
+# wait_timer.vhd
+# unit_control.vhd
+# elevator_ctrl.vhd
+# elevator_ctrl_tb.vhd
+# 0
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying C:/Mahmoud Taha/Computer ARCH/Project/LifterControler.mpf
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:00:24 on Oct 30,2026
+# vcom -reportprogress 300 -93 request_resolver.vhd 
+# ** Error: (vcom-7) Failed to open design unit file "request_resolver.vhd" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 01:00:24 on Oct 30,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro C:\Mahmoud Taha\Computer ARCH\Project\run_sim.do line 20
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 $RESOLVER"
+cd {C:/Mahmoud Taha/Computer ARCH/Project}

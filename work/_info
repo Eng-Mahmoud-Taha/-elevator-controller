@@ -1,0 +1,269 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Mahmoud Taha/Computer ARCH/Project
+Eelevator_ctrl
+Z1 w1793317267
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 21
+R0
+Z5 8C:/Mahmoud Taha/Computer ARCH/Project/EVcontroller.vhd
+Z6 FC:/Mahmoud Taha/Computer ARCH/Project/EVcontroller.vhd
+l0
+L8 1
+VLML83fbVPaF774HHE8@a82
+!s100 a;fO?Sk`hRZJXh98Jb<A:1
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1793317308
+!i10b 1
+Z9 !s108 1793317308.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/Mahmoud Taha/Computer ARCH/Project/EVcontroller.vhd|
+Z11 !s107 C:/Mahmoud Taha/Computer ARCH/Project/EVcontroller.vhd|
+!i113 1
+Z12 o-work work
+Z13 tExplicit 1 CvgOpt 0
+Artl
+Z14 DEx4 work 12 unit_control 0 22 GSC<2VXWkF;>Hl:naRD;R1
+Z15 DEx4 work 10 wait_timer 0 22 :>3;[Ikc;@<J]b=W=<<E[2
+Z16 DEx4 work 16 request_resolver 0 22 b[dN6lA[hIP8^Jz`B:X[B1
+R2
+R3
+R4
+Z17 DEx4 work 13 elevator_ctrl 0 22 ?Q8`YgR=1DPV[@FgClP@k2
+!i122 16
+l37
+L24 70
+VFRSO4W0A5m6eS_3W2NZgc2
+!s100 58f5=OYoQe8_XC;daoFmO3
+R7
+32
+Z18 !s110 1793317031
+!i10b 1
+!s108 1793317030.000000
+R10
+R11
+!i113 1
+R12
+R13
+Eelevator_ctrl_tb
+Z19 w1793314698
+R2
+R3
+R4
+!i122 20
+R0
+Z20 8C:/Mahmoud Taha/Computer ARCH/Project/elevator_ctrl_tb.vhd
+Z21 FC:/Mahmoud Taha/Computer ARCH/Project/elevator_ctrl_tb.vhd
+l0
+L9 1
+V<67I[PP3o4oPDU`_Y[N`B2
+!s100 ^f8IDI`db9_WRjW3`oWCL0
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|C:/Mahmoud Taha/Computer ARCH/Project/elevator_ctrl_tb.vhd|
+Z23 !s107 C:/Mahmoud Taha/Computer ARCH/Project/elevator_ctrl_tb.vhd|
+!i113 1
+R12
+R13
+Asim
+R17
+R2
+R3
+R4
+DEx4 work 16 elevator_ctrl_tb 0 22 <67I[PP3o4oPDU`_Y[N`B2
+!i122 20
+l38
+L12 228
+VL36jSckmCJK;1zR<La>030
+!s100 PIS^io[h;90o`m6<V9Nn10
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Erequest_resolver
+Z24 w1793316583
+R2
+R3
+R4
+!i122 22
+R0
+Z25 8C:/Mahmoud Taha/Computer ARCH/Project/requestResolver.vhd
+Z26 FC:/Mahmoud Taha/Computer ARCH/Project/requestResolver.vhd
+l0
+L7 1
+Vb[dN6lA[hIP8^Jz`B:X[B1
+!s100 @23RLiU5makWlXm^?m1bb3
+R7
+32
+Z27 !s110 1793317309
+!i10b 1
+R9
+Z28 !s90 -reportprogress|300|-work|work|C:/Mahmoud Taha/Computer ARCH/Project/requestResolver.vhd|
+Z29 !s107 C:/Mahmoud Taha/Computer ARCH/Project/requestResolver.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+R16
+!i122 22
+l19
+L18 17
+VJm:NRPgAT1OTJjb]?`9hI1
+!s100 D]m;KVRkGEAj<g?G4cFPf2
+R7
+32
+R27
+!i10b 1
+R9
+R28
+R29
+!i113 1
+R12
+R13
+Essd
+Z30 w1793317062
+R3
+R4
+!i122 23
+R0
+Z31 8C:/Mahmoud Taha/Computer ARCH/Project/ssd.vhd
+Z32 FC:/Mahmoud Taha/Computer ARCH/Project/ssd.vhd
+l0
+L4 1
+VjL2I5]gcFQJ5?RO:DlFSm0
+!s100 N7=koogPAOh2RI[2d:[S_3
+R7
+32
+R27
+!i10b 1
+Z33 !s108 1793317309.000000
+Z34 !s90 -reportprogress|300|-work|work|C:/Mahmoud Taha/Computer ARCH/Project/ssd.vhd|
+Z35 !s107 C:/Mahmoud Taha/Computer ARCH/Project/ssd.vhd|
+!i113 1
+R12
+R13
+Artl
+R3
+R4
+DEx4 work 3 ssd 0 22 jL2I5]gcFQJ5?RO:DlFSm0
+!i122 23
+l12
+L11 19
+V]zSa:M9]Jlf9BVGjT@nIm1
+!s100 OB7NL5D1[<Rocd>O?YMno2
+R7
+32
+R27
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R12
+R13
+Eunit_control
+Z36 w1793315992
+R2
+R3
+R4
+!i122 24
+R0
+Z37 8C:/Mahmoud Taha/Computer ARCH/Project/unitControl.vhd
+Z38 FC:/Mahmoud Taha/Computer ARCH/Project/unitControl.vhd
+l0
+L11 1
+VGSC<2VXWkF;>Hl:naRD;R1
+!s100 2kRG[=ecSCmP]Kf=4@IVe2
+R7
+32
+R27
+!i10b 1
+R33
+Z39 !s90 -reportprogress|300|-work|work|C:/Mahmoud Taha/Computer ARCH/Project/unitControl.vhd|
+Z40 !s107 C:/Mahmoud Taha/Computer ARCH/Project/unitControl.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+R14
+!i122 24
+l37
+Z41 L31 81
+Z42 VdJ?0igR@FYlTY6:2@Y;@`2
+Z43 !s100 UM?R1S:9F9=jCfU8a<?VI0
+R7
+32
+R27
+!i10b 1
+R33
+R39
+R40
+!i113 1
+R12
+R13
+Ewait_timer
+Z44 w1793313630
+R3
+R4
+!i122 19
+R0
+Z45 8C:/Mahmoud Taha/Computer ARCH/Project/waitTimer.vhd
+Z46 FC:/Mahmoud Taha/Computer ARCH/Project/waitTimer.vhd
+l0
+L6 1
+V:>3;[Ikc;@<J]b=W=<<E[2
+!s100 B?CRkTRAMH=4e;2M4jREz0
+R7
+32
+R18
+!i10b 1
+Z47 !s108 1793317031.000000
+Z48 !s90 -reportprogress|300|-work|work|C:/Mahmoud Taha/Computer ARCH/Project/waitTimer.vhd|
+Z49 !s107 C:/Mahmoud Taha/Computer ARCH/Project/waitTimer.vhd|
+!i113 1
+R12
+R13
+Artl
+R3
+R4
+R15
+!i122 19
+l20
+L16 45
+VL_3_0Bg58ihW[H=2eSW5M0
+!s100 U>ac8N:z_PJ6PCBa:^1Zn3
+R7
+32
+R18
+!i10b 1
+R47
+R48
+R49
+!i113 1
+R12
+R13
